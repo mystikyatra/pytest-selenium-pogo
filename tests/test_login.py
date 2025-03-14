@@ -13,5 +13,8 @@ def test_valid_login_and_logout(setup):
     game_search.search_for_game("Solitaire")
     assert game_search.verify_game_displayed(), "Solitaire game is not displayed in search results!"
 
+    # Game search tool tip.
+    assert game_search.verify_tooltip_displayed(), "Tooltip message is not displayed or incorrect!"
+
     logout_page = LogOutPage(setup)
     logout_page.logout()
